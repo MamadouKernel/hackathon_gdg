@@ -1,0 +1,13 @@
+{
+    "require": {
+        "twig/twig": "^3.0",
+        "klein/klein": "^2.1",
+        "nette/robot-loader": "^3.4",
+        "symfony/mailer": "5.4.13",
+        "fakerphp/faker": "^1.20",
+        "twig/string-extra": "^3.4",
+        "twig/intl-extra": "^3.4",
+        "knplabs/knp-paginator-bundle": "^5.9",
+        "twig/extra-bundle": "^3.4"
+    }
+}

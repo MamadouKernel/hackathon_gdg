@@ -1,0 +1,37 @@
+{% extends 'layout.kmphtml.twig' %}
+{% block title %}HACKATHON DEVFEST-CI 2022 | Accueil{% endblock %}
+{% block contenu %}
+
+    <section id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="intro">
+                        <h6>HACKATHON</h6>
+                        <h1>HACKATHON DEVFEST-CI 2022</h1>
+                        <p class="mx-auto">Connecte toi ou Inscrire toi pour soutenir ton Groupe</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for groupe in groupes %}
+                    <div class="col-4">
+                        <article class="blog-post">
+                            <img src="files/{{groupe.Image}}" alt="" height="157px">
+                            <a href="/groupe?id={{ groupe.idprojet }}"  class="tag">Voir plus</a>
+                            <div class="content">
+                                <small>GROUPE N°{{groupe.idprojet}}</small>
+                                <h5>{{groupe.Title}}</h5>
+                                <p style=" overflow:hidden;line-height: 2rem; max-height: 8rem; -webkit-box-orient: vertical; display: block; display: -webkit-box; overflow: hidden !important; text-overflow: ellipsis; -webkit-line-clamp: 4;">{{groupe.Description}}</p>
+                            </div>
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

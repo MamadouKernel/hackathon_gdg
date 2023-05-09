@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://D:/trajectoire/.idea/trajectoire.iml" filepath="D:/trajectoire/.idea/trajectoire.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/vote.iml" filepath="$PROJECT_DIR$/.idea/vote.iml" />
+    </modules>
+  </component>
+</project>

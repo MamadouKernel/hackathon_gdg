@@ -1,0 +1,60 @@
+{% extends 'layout.kmphtml.twig'%}
+{% block title %}HACKATHON DEVFEST-CI | Connexion{% endblock %}
+{% block contenu %}
+
+    <div class="container-fluid">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-sm-12 bg-cover">
+                <img src="public/img/fg.jpeg" height="350px">
+            </div>
+            <div class="col-lg-8">
+
+                {% if message == 'succes' %}
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 alert alert-success alert-dismissible fade show" role="alert">
+                        {{ message_connexion }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+                <script>
+                    setTimeout(function () {
+                        window.location.href = '/';
+                    }, 500)
+                </script>
+
+                {% elseif message == 'echec' %}
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3 alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ message_err_connexion }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                {% endif %}
+                <form method="post" class="p-lg-5 col-12 row g-3">
+                    <div class="text-center">
+                        <h1>Connexion</h1>
+                        <p>Je me Connecte pour voter mon groupe</p>
+                    </div>
+                    <div class="col-12">
+                        <label for="userName" class="form-label">Email address</label>
+                        <input type="email" name="mail" class="form-control" placeholder="hackathon@domaine.com"
+                            id="userName" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="col-12">
+                        <label for="mdp" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" placeholder="mot de passe"
+                            id="mdp" name="mdp">
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" name="connexion" class="btn btn-brand">Connexion </button>
+                    </div>
+
+                    <p>Si vous n'avez pas de compte veuillez vous <a href="/inscription">inscrire</a> svp </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

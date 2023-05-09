@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="public/css/owl.theme.default.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="public/css/style.css">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+
+    <!-- TOP NAV -->
+    <div class="top-nav" id="home">
+        <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="public/img/01.jpeg" height="70px" class="border border-5">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="public/img/02.jpeg" height="70px" class="border border-5">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="public/img/03.jpeg" height="70px" class="border border-5">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="public/img/04.jpeg" height="70px" class="border border-5">
+                        </div>
+                    </div>
+                    {# <p> <i class='bx bxs-envelope'></i> info@example.com</p>
+                    <p> <i class='bx bxs-phone-call'></i> 123 456-7890</p> #}
+                
+        </div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">HACKATHON DEVFEST-CI<span class="dot">2022</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    {% if session == 0 %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/inscription">Inscription</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/connexion">Connexion</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">{{ log_con[0].NomPrenom }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.php?logout=true">Déconnexion</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block contenu %}{% endblock %}
+
+    <footer>
+        <div class="footer-top text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h4 class="navbar-brand">HACKATHON DEVFEST-CI<span class="dot">2022</span></h4>
+                        <p>L'objectif est de susciter un engouement des universités autour du DevFest. Nous avons 2 catégories Dev web mobile dont le thème est : Orientation post bac et IA dont le choix est libre pour toute équipe.</p>
+                        <div class="col-auto social-icons">
+                            <h4 class="navbar-brand">NOS SPONSORS</h4><hr>
+                            <div class="row">
+                                <div class="col-sm-6 col-6">
+                                    <img class="rounded" width="40%" src="public/img/part1.jpg">
+                                </div>
+                                <div class="col-sm-6 col-6">
+                                    <img class="rounded" width="40%" src="public/img/part2.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p class="mb-0">Copyright &copy <script>document.write(new Date().getFullYear());</script>. tous droits réservés</p> Conçu par l'équipe <code>DEVFEST-CI</code>
+        </div>
+    </footer>
+
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/bootstrap.bundle.min.js"></script>
+    <script src="public/js/owl.carousel.min.js"></script>
+    <script src="public/js/app.js"></script>
+</body>
+
+</html>

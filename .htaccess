@@ -1,0 +1,20 @@
+ErrorDocument 404 /controllers/404.php
+ErrorDocument 500 /controllers/500.php
+ErrorDocument 403 /controllers/403.php
+ErrorDocument 503 /controllers/503.php
+ErrorDocument 400 /controllers/400.php
+<IfModule mod_rewrite.c>
+ # Rewrite personaliser
+
+    Options +FollowSymlinks
+    RewriteEngine on
+
+    # redirect
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^accueil$ index.php$1 [L]
+    RewriteRule ^inscription$ controllers/register.php$1 [L]
+    RewriteRule ^connexion$ controllers/login.php$1 [L]
+    RewriteRule ^groupe$ controllers/groupe.php$1 [L]
+
+</IfModule>

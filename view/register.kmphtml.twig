@@ -1,0 +1,71 @@
+{% extends 'layout.kmphtml.twig'%}
+{% block title %}HACKATHON DEVFEST-CI | Inscription{% endblock %}
+    {% block contenu %}
+
+<div class="container-fluid">
+    <div class="row gy-4">
+        <div class="col-lg-4 col-sm-12 bg-cover">
+           <img src="public/img/fg.jpeg" height="350px">
+        </div>
+        <div class="col-lg-8">
+            {% if message == 'succes' %}
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 alert alert-success alert-dismissible fade show text-center" role="alert">
+                        {{ message_succes }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            {% elseif message == 'no_succes' %}
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 alert alert-danger alert-dismissible fade show text-center" role="alert">
+                        {{ message_echec }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            {% elseif message == 'echec' %}
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 alert alert-warning alert-dismissible fade show text-center" role="alert">
+                        {{ message_existe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            {% endif %}
+            <form method="post" class="p-lg-5 col-12 row g-3">
+                <div class="text-center">
+                    <h1>Inscription</h1>
+                    <p>Je m'inscrire et je me Connecte pour voter mon groupe</p>
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="nom" class="form-label">Nom</label>
+                    <input type="text" name="nom" pattern="[a-zA-Z\s]+" class="form-control" required placeholder="Nom" id="nom"
+                        aria-describedby="userNameHelp">
+                </div>
+                <div class="col-lg-6">
+                    <label for="prenom" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" pattern="[a-zA-Z\s]+" name="prenom" required placeholder="Prénom" id="prenom"
+                        aria-describedby="userNameHelp">
+                </div>
+
+                <div class="col-12">
+                    <label for="mail" class="form-label">Adresse Email</label>
+                    <input type="email" name="mail" class="form-control" required placeholder="hackathon@domaine.com"
+                        id="mail" aria-describedby="emailHelp">
+                </div>
+
+                <div class="col-12">
+                    <label for="tel" class="form-label">Téléphone</label>
+                    <input type="text" pattern="[0-9]+" minlength="10" maxlength="10" required class="form-control" placeholder="numéro de téléphone"
+                        id="tel" name="tel">
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" name="inscription" class="btn btn-brand">Inscription </button>
+                </div>
+                <p>Si vous avez déjà un compte veuillez vous <a href="/connexion">connecté</a> svp </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
